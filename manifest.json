@@ -2,7 +2,7 @@
   "name": "Push Notification Demo",
   "short_name": "PushNotifDemo",
   "description": "A demo PWA that allows users to set push notifications.",
-  "start_url": ".",
+  "start_url": "https://jban199.github.io/notify/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
