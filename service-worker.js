@@ -1,12 +1,23 @@
 // service-worker.js
-self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data.text(),
-    icon: 'icons/icon-192x192.png',
-    badge: 'icons/icon-192x192.png',
-  };
+self.addEventListener("install", event => {
+    event.waitUntil(
+        caches.open("pwa-cache").then(cache => {
+            return cache.addAll([
+                "index.html",
+                "styles.css",
+                "app.js",
+                "manifest.json",
+                "icon-192x192.png",
+                "icon-512x512.png"
+            ]);
+        })
+    );
+});
 
-  event.waitUntil(
-    self.registration.showNotification('Push Notification', options)
-  );
+self.addEventListener("fetch", event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
 });
