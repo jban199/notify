@@ -1,25 +1,27 @@
-// index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWA Notification App</title>
+    <title>PWA Notifications</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="app.js"></script>
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="container">
-        <h1>Schedule Notification</h1>
-        <input id="title" type="text" placeholder="Title">
-        <textarea id="description" placeholder="Description"></textarea>
-        <input id="image" type="text" placeholder="Image URL (optional)">
-        <input id="dateTime" type="datetime-local">
-        <button id="scheduleBtn">Schedule Notification</button>
-        <h2>Scheduled Notifications</h2>
-        <div id="notificationsList"></div>
-    </div>
+    <h1>Notification Scheduler</h1>
+
+    <form id="notificationForm">
+        <label>Title: <input type="text" id="title" required></label>
+        <label>Description: <textarea id="description" required></textarea></label>
+        <label>Image URL (optional): <input type="url" id="imageUrl"></label>
+        <label>Date & Time: <input type="datetime-local" id="datetime" required></label>
+        <button type="submit">Schedule Notification</button>
+    </form>
+
+    <h2>Scheduled Notifications</h2>
+    <ul id="notificationList"></ul>
+
+    <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')
