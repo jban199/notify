@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWA Notifications</title>
+    <meta name="theme-color" content="#000000">
+    <title>PWA Fullscreen Demo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Notification Scheduler</h1>
-
-    <form id="notificationForm">
-        <label>Title: <input type="text" id="title" required></label>
-        <label>Description: <textarea id="description" required></textarea></label>
-        <label>Image URL (optional): <input type="url" id="imageUrl"></label>
-        <label>Date & Time: <input type="datetime-local" id="datetime" required></label>
-        <button type="submit">Schedule Notification</button>
-    </form>
-
-    <h2>Scheduled Notifications</h2>
-    <ul id="notificationList"></ul>
-
-    <script src="app.js"></script>
+    <button id="openMenu">Open Menu</button>
+    <div id="menuContainer"></div>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(() => console.log('Service Worker Registered'))
-                .catch(err => console.error('Service Worker Registration Failed', err));
+            navigator.serviceWorker.register('sw.js');
         }
     </script>
 </body>
