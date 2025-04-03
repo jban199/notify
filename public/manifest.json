@@ -2,7 +2,7 @@
   "name": "PWA Boilerplate",
   "short_name": "PWABoiler",
   "description": "A comprehensive PWA boilerplate",
-  "start_url": "/",
+  "start_url": "https://jban199.github.io/notify/public/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2196f3",
