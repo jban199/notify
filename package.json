@@ -1,0 +1,20 @@
+{
+  "name": "pwa-boilerplate",
+  "version": "1.0.0",
+  "description": "A comprehensive PWA boilerplate",
+  "scripts": {
+    "start": "http-server -p 8080 -c-1 public",
+    "build": "echo 'Build process would go here'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "pwa",
+    "boilerplate",
+    "progressive-web-app"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
